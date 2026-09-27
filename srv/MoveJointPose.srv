@@ -1,0 +1,17 @@
+uint8 ABSOLUTE=0
+uint8 RELATIVE=1
+
+# MoveIt group used for planning: left_arm, right_arm, dual_arm, or whole_body.
+# An empty value uses the server's default_planning_group parameter.
+string planning_group
+
+# When joint_names is empty, joint_positions must contain every variable in the
+# selected group in MoveIt's group-variable order. Otherwise the two arrays must
+# have equal length and only the named variables are changed.
+string[] joint_names
+float64[] joint_positions
+
+uint8 mode
+---
+bool success
+string message

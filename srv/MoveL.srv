@@ -1,0 +1,31 @@
+uint8 ABSOLUTE=0
+uint8 RELATIVE=1
+uint8 PLANNING_FRAME=0
+uint8 END_EFFECTOR_FRAME=1
+
+# MoveIt group used for collision-free global planning. Empty uses the server default.
+string planning_group
+
+# Cartesian goal names and poses use the same semantics as Move3DPose.
+string[] end_effector_names
+geometry_msgs/Pose[] ee_poses
+uint8 mode
+
+# Coordinate frame for relative position and orientation offsets. Ignored for
+# ABSOLUTE mode. See Move3DPose for complete semantics.
+uint8 relative_frame
+
+# Zero values select the corresponding server defaults.
+float64 position_tolerance
+float64 orientation_tolerance
+float64 tracking_timeout
+---
+# True means planning, reference streaming, and final measured tracking all succeeded.
+bool success
+string message
+uint32 published_samples
+float64 planned_duration
+
+# Errors follow the configured tracking_tip_links order.
+float64[] final_position_errors
+float64[] final_orientation_errors

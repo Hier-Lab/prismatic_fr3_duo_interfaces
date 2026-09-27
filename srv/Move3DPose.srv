@@ -1,0 +1,25 @@
+uint8 ABSOLUTE=0
+uint8 RELATIVE=1
+uint8 PLANNING_FRAME=0
+uint8 END_EFFECTOR_FRAME=1
+
+# MoveIt group used for planning: left_arm, right_arm, dual_arm, or whole_body.
+# An empty value uses the server's default_planning_group parameter.
+string planning_group
+
+# One pose per end effector. Names may be semantic SRDF names (left_ee/right_ee)
+# or tip links (left_fr3_hand_tcp/right_fr3_hand_tcp).
+string[] end_effector_names
+geometry_msgs/Pose[] ee_poses
+
+# ABSOLUTE poses are expressed in the planning frame.
+uint8 mode
+
+# For RELATIVE mode, select where the position and orientation offsets are expressed.
+# PLANNING_FRAME uses the fixed MoveIt planning frame. END_EFFECTOR_FRAME uses each
+# end effector's current local axes. Ignored for ABSOLUTE mode. A zero relative
+# quaternion keeps the current orientation.
+uint8 relative_frame
+---
+bool success
+string message

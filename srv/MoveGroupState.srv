@@ -1,0 +1,9 @@
+# MoveIt planning group that owns the predefined SRDF <group_state>.
+# An empty value uses the server's default_planning_group parameter.
+string planning_group
+
+# Name of a <group_state> defined for planning_group in the active SRDF model.
+string group_state
+---
+bool success
+string message

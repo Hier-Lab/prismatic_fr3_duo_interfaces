@@ -1,0 +1,7 @@
+# One command per end effector. Names may be semantic SRDF names (left_ee and
+# right_ee), end-effector tip links, or gripper planning groups.
+string[] end_effector_names
+string[] commands  # Each entry must be "open" or "close".
+---
+bool success
+string message
